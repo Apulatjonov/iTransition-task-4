@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+</head>
+<body>
+<h1>
+    Login
+</h1>
+<!--/*@thymesVar id="UserEntity" type="com.itransition.task_4.UserEntity"*/-->
+<form action="/checkUser" th:action="@{/checkUser}" th:object="${UserEntity}" method="post">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="mail" class="form-control" name="mail"/>
+        <label class="form-label" for="mail">Email address</label>
+    </div>
+
+    <!-- Password input -->
+    <div class="form-outline mb-4">
+        <input type="text" id="password" class="form-control" name="password"/>
+        <label class="form-label" for="password">Password</label>
+    </div>
+
+    <!-- Submit button -->
+    <input type="submit" value="Submit" class="btn btn-primary btn-block mb-4">Sign in</input>
+</form>
+<form action="/register" th:action="@{/register}" method="get">
+    <div class="text-center">
+        <p>Not a member? <button type="submit">Register</button></p>
+    </div>
+</form>
+<!--/*@thymesVar id="message" type="com.itransition.task_4.msg.Message"*/-->
+<!--<h3 th:text="${message.text}"></h3>-->
+</body>
+</html>

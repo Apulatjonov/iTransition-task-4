@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration User</title>
+</head>
+<body>
+<h1>Registration</h1>
+<!--/*@thymesVar id="UserEntity" type="com.itransition.task_4.UserEntity"*/-->
+<form action="/saveUser" th:action="@{/saveUser}" th:object="${UserEntity}" method="post">
+    <table border="1">
+        <tr>
+            <td>Name:</td>
+            <td><input type="text" id="name" name="name"/></td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td><input type="text" id="mail" name="mail"/></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="text" id="password" name="password"/></td>
+        </tr>
+    </table>
+    <tr>
+        <td><input type="submit" value="Submit" /></td>
+    </tr>
+</form>
+</body>
+</html>
