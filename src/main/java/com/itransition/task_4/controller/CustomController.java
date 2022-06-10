@@ -67,6 +67,7 @@ public class CustomController {
         userEntity.setRegistrationTime(LocalDateTime.now());
         userEntity.setStatus("Active");
         UserEntity save = userRepository.save(userEntity);
+        user = save;
         List<UserEntity> list = userRepository.findAll();
         model.addAttribute("users", list);
         return "index";
